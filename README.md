@@ -1,183 +1,389 @@
-Task 4 - Git Version Control
+# 🚀 Task 4 — Git Version Control Project
 
-Project Overview
+[![Git](https://img.shields.io/badge/Git-Version%20Control-F05032?logo=git\&logoColor=white)](https://git-scm.com/)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github\&logoColor=white)](https://github.com/)
+[![Status](https://img.shields.io/badge/Status-Completed-success)](#-project-status)
+[![Version](https://img.shields.io/badge/Version-v1.0.0-blue)](#-versioning)
 
-This project demonstrates a version-controlled DevOps project using Git and GitHub. It implements a practical Git workflow with branches, meaningful commits, Pull Requests, merging, and project documentation.
+> A practical DevOps internship project demonstrating **Git version control, branching, commits, Pull Requests, GitHub workflow, documentation, `.gitignore`, and version tagging**.
 
-Objective
+---
 
-The objective of this project is to manage a DevOps project using Git best practices and understand a structured GitHub workflow.
+## 📌 Table of Contents
 
-Tools Used
+* [🎯 Project Overview](#-project-overview)
+* [🛠️ Tools Used](#️-tools-used)
+* [📁 Project Structure](#-project-structure)
+* [🌿 Branching Strategy](#-branching-strategy)
+* [🔄 Git Workflow](#-git-workflow)
+* [🔀 Pull Request Workflow](#-pull-request-workflow)
+* [📝 Commit History](#-commit-history)
+* [🏷️ Versioning](#️-versioning)
+* [🚫 .gitignore](#-gitignore)
+* [📚 Documentation](#-documentation)
+* [📸 Evidence](#-evidence)
+* [🎓 What I Learned](#-what-i-learned)
+* [✅ Project Status](#-project-status)
 
-Git
+---
 
-GitHub
+## 🎯 Project Overview
 
-Visual Studio Code
+The objective of this project was to manage a DevOps project using **Git best practices**.
 
+The project demonstrates how a developer can:
 
-Project Structure
+* Initialize and manage a Git repository
+* Create and manage multiple branches
+* Develop features using feature branches
+* Use meaningful commits
+* Push code to GitHub
+* Create and merge Pull Requests
+* Maintain a proper `README.md`
+* Use `.gitignore`
+* Create Git tags for version identification
+* Document the workflow using Markdown
 
+---
+
+## 🛠️ Tools Used
+
+| Tool         | Purpose                           |
+| ------------ | --------------------------------- |
+| **Git**      | Version control                   |
+| **GitHub**   | Remote repository & Pull Requests |
+| **VS Code**  | Development & Git operations      |
+| **HTML**     | Simple project landing page       |
+| **Markdown** | Project documentation             |
+
+---
+
+## 📁 Project Structure
+
+```text
 Task-4-git-version-control/
 │
-├── index.html
-├── README.md
-├── .gitignore
+├── 📄 index.html
+├── 📄 README.md
+├── 📄 .gitignore
 │
-└── docs/
-    └── git-workflow.md
+├── 📂 docs/
+│   └── 📄 git-workflow.md
+│
+└── 📂 screenshots/
+    ├── 📸 01-feature-to-dev-merged
+    ├── 📸 02-dev-to-main-merged
+    ├── 📸 03-branches
+    └── 📸 04-tag-v1.0.0
+```
 
-File Description
+### File Purpose
 
-index.html - Simple project landing page used to demonstrate a feature change.
+| File / Folder  | Purpose                                            |
+| -------------- | -------------------------------------------------- |
+| `index.html`   | Project landing page                               |
+| `README.md`    | Main project documentation                         |
+| `.gitignore`   | Prevents unnecessary files from being tracked      |
+| `docs/`        | Detailed Git workflow documentation                |
+| `screenshots/` | Evidence of GitHub workflow and project completion |
 
-README.md - Project overview and Git workflow documentation.
+---
 
-.gitignore - Defines files and directories that should not be tracked by Git.
+## 🌿 Branching Strategy
 
-docs/git-workflow.md - Detailed documentation of the Git workflow used in this project.
+This project follows a simple three-level branching workflow:
 
-
-Git Branching Strategy
-
-The project uses three branches:
-
+```text
 main
-  ↑
-dev
-  ↑
-feature/update-project
+ │
+ └── dev
+      │
+      └── feature/update-project
+```
 
+| Branch                   | Purpose                     |
+| ------------------------ | --------------------------- |
+| `main`                   | Final stable version        |
+| `dev`                    | Development and integration |
+| `feature/update-project` | Feature development         |
+
+---
+
+## 🔄 Git Workflow
+
+The project followed this workflow:
+
+```mermaid
+flowchart LR
+    A[Local Project] --> B[git init]
+    B --> C[Initial Commit]
+    C --> D[main]
+    D --> E[dev]
+    E --> F[feature/update-project]
+    F --> G[Feature Commit]
+    G --> H[Pull Request]
+    H --> I[dev]
+    I --> J[Pull Request]
+    J --> K[main]
+    K --> L[v1.0.0 Tag]
+```
+
+### Workflow in Simple Terms
+
+1. Created the project locally.
+2. Initialized Git.
+3. Created the initial commit.
+4. Set the primary branch as `main`.
+5. Created the `dev` branch.
+6. Created the `feature/update-project` branch.
+7. Added the project landing page.
+8. Committed the feature.
+9. Created a Pull Request from `feature/update-project` → `dev`.
+10. Merged the feature Pull Request.
+11. Created a Pull Request from `dev` → `main`.
+12. Merged the development changes.
+13. Added project documentation and `.gitignore`.
+14. Created the `v1.0.0` tag.
+15. Verified the final repository state.
+
+---
+
+## 🔀 Pull Request Workflow
+
+### Pull Request 1
+
+```text
+feature/update-project
+          ↓
+         PR
+          ↓
+         dev
+```
+
+**Purpose:** Merge the completed feature into the development branch.
+
+### Pull Request 2
+
+```text
+dev
+ ↓
+PR
+ ↓
 main
+```
 
-The main branch represents the stable version of the project.
+**Purpose:** Merge the completed development work into the final stable branch.
 
-dev
+Both Pull Requests were successfully merged.
 
-The dev branch is used for integrating completed development changes before they are merged into main.
+---
 
-feature/update-project
+<details>
+<summary>📝 Click to view Commit History</summary>
 
-The feature branch was created to implement the project landing page change without directly modifying the stable branch.
+### Initial Project Commit
 
-Git Workflow
-
-The following workflow was implemented:
-
-Create Project
-      ↓
-Initialize Git Repository
-      ↓
-Initial Commit
-      ↓
-Create main, dev and feature branches
-      ↓
-Develop Feature
-      ↓
-Commit Changes
-      ↓
-Push Feature Branch to GitHub
-      ↓
-Pull Request: feature/update-project → dev
-      ↓
-Merge into dev
-      ↓
-Pull Request: dev → main
-      ↓
-Merge into main
-
-Commits
-
-The project includes meaningful commits to maintain a clear version history.
-
-Initial Commit
-
+```text
 Initial project setup
+```
 
-Created the initial project structure and Git repository.
+Created the initial Git repository structure.
 
-Feature Commit
+### Feature Commit
 
+```text
 Add project landing page
+```
 
-Added the project landing page in index.html through the feature branch.
+Added the project landing page in `index.html`.
 
-Pull Request Workflow
+### Documentation Commit
 
-Pull Requests were used to merge changes between branches instead of directly merging development work into the stable branch.
+```text
+Add project documentation and gitignore
+```
 
-Pull Request 1
+Added the final README, `.gitignore`, and Markdown workflow documentation.
 
-feature/update-project → dev
+### Evidence Commit
 
-The feature branch containing the landing page change was reviewed and merged into dev.
+```text
+Add task evidence screenshots
+```
 
-Pull Request 2
+Added screenshots demonstrating the completed GitHub workflow.
 
-dev → main
+</details>
 
-The completed development changes were promoted from dev to the stable main branch.
+---
 
-.gitignore
+## 🏷️ Versioning
 
-The .gitignore file is included to prevent unnecessary or local files from being tracked by Git.
+The final stable version of the project is identified using the Git tag:
 
-It helps keep the repository clean and prevents files that should remain local from being committed.
+```text
+v1.0.0
+```
 
-Git Commands Used
+The tag provides a fixed reference point for the completed project version.
 
-Some of the Git commands used during the project include:
+---
 
+## 🚫 .gitignore
+
+The project uses `.gitignore` to prevent unnecessary files from being tracked.
+
+Examples include:
+
+```text
+.env
+*.log
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+```
+
+---
+
+## 📚 Documentation
+
+Detailed Git workflow documentation is available here:
+
+📄 [`docs/git-workflow.md`](docs/git-workflow.md)
+
+It covers:
+
+* Repository initialization
+* Branching strategy
+* Feature development
+* GitHub remote setup
+* Pull Requests
+* Final verification
+* Git tagging
+
+---
+
+## 📸 Evidence
+
+The `screenshots/` directory contains evidence of the completed GitHub workflow.
+
+| Evidence                   | Description                                              |
+| -------------------------- | -------------------------------------------------------- |
+| `01-feature-to-dev-merged` | Feature Pull Request successfully merged into `dev`      |
+| `02-dev-to-main-merged`    | Development Pull Request successfully merged into `main` |
+| `03-branches`              | GitHub branches                                          |
+| `04-tag-v1.0.0`            | GitHub version tag                                       |
+
+---
+
+## 🎓 What I Learned
+
+Through this project, I learned and practiced:
+
+* Git repository initialization
+* Git staging and commits
+* Branch creation and management
+* Feature branch workflow
+* GitHub remote repositories
+* Pull Requests
+* Branch merging
+* `.gitignore`
+* Git tags
+* Markdown documentation
+* Repository verification
+* Basic Git collaboration workflow
+
+---
+
+## 🧠 Key Git Commands
+
+<details>
+<summary>Click to view commonly used commands</summary>
+
+```bash
 git init
-git status
 git add .
-git commit
-git branch
+git commit -m "message"
+
 git branch -M main
 git switch -c dev
 git switch -c feature/update-project
-git remote add origin
-git remote -v
-git push
-git checkout main
 
-Final Verification
+git remote add origin <repository-url>
 
-The final repository was verified using Git status and GitHub.
+git push -u origin main
+git push -u origin dev
+git push -u origin feature/update-project
 
-The final main branch was synchronized with the remote repository and the working tree was clean.
+git status
+git branch -a
 
-On branch main
-Your branch is up to date with 'origin/main'.
+git pull --rebase origin main
 
-nothing to commit, working tree clean
+git tag -a v1.0.0 -m "Release version 1.0.0"
+git push origin v1.0.0
+```
 
-What I Learned
+</details>
 
-Through this project, I practiced:
+---
 
-Initializing and managing a Git repository
+## ⚠️ Git Push Issue Encountered
 
-Creating and managing branches
+During the project, the first push to `main` was rejected because the remote GitHub branch contained a commit that was not present locally.
 
-Making meaningful commits
+The error was:
 
-Connecting a local repository with GitHub
+```text
+[rejected] main -> main (fetch first)
+```
 
-Pushing branches to GitHub
+### Resolution
 
-Creating and merging Pull Requests
+```bash
+git pull --rebase origin main
+git push origin main
+```
 
-Using a feature → development → main workflow
+The histories were synchronized successfully and the push completed.
 
-Maintaining project documentation with Markdown
+> **Key takeaway:**
+> `Push rejected` usually means the remote contains changes that are missing locally. Pulling with rebase synchronizes the history before pushing.
 
-Keeping the repository clean using .gitignore
+---
 
-Verifying the final repository state
+## ✅ Project Status
 
+| Requirement            | Status     |
+| ---------------------- | ---------- |
+| Git repository         | ✅ Complete |
+| Meaningful commits     | ✅ Complete |
+| `main` branch          | ✅ Complete |
+| `dev` branch           | ✅ Complete |
+| Feature branch         | ✅ Complete |
+| Feature → Dev PR       | ✅ Merged   |
+| Dev → Main PR          | ✅ Merged   |
+| README.md              | ✅ Complete |
+| `.gitignore`           | ✅ Complete |
+| Markdown documentation | ✅ Complete |
+| Git tag `v1.0.0`       | ✅ Complete |
+| Evidence screenshots   | ✅ Added    |
+| Final verification     | ✅ Complete |
 
-Conclusion
+---
 
-This project provided practical experience with Git version control and a structured GitHub workflow. The completed workflow demonstrates how development changes can be isolated in feature branches, integrated through dev, and finally merged into the stable main branch using Pull Requests.
+## 🏁 Conclusion
+
+This project demonstrates a practical **Git + GitHub version-control workflow** suitable for a DevOps environment.
+
+The repository uses structured branching, meaningful commits, Pull Requests, documentation, `.gitignore`, evidence screenshots, and version tagging to maintain a clean and traceable project history.
+
+### 🚀 Final Version
+
+**`v1.0.0` — Completed Git Version Control Project**
+
+---
+
+**GitHub Repository:**
+`https://github.com/nileshyadav2803/Task-4-git-version-control`
